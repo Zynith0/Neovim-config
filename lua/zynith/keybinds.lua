@@ -13,15 +13,15 @@ harpoon:setup()
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<C-l>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
+-- for colemak
 vim.keymap.set("n", "<C-m>", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<C-n>", function() harpoon:list():select(2) end)
 vim.keymap.set("n", "<C-e>", function() harpoon:list():select(3) end)
 vim.keymap.set("n", "<C-i>", function() harpoon:list():select(4) end)
 
 vim.keymap.set("n", "<leader>k", "<cmd>Explore<CR>")
-vim.keymap.set("n", "<leader>e", "ddkP")
-vim.keymap.set("n", "<leader>n", "ddp")
 
+-- for colemak
 vim.keymap.set("n", "m", "<left>")
 vim.keymap.set("n", "n", "<down>")
 vim.keymap.set("n", "e", "<up>")
@@ -49,3 +49,7 @@ vim.keymap.set("n", ".f",
 	'oif err != nil {<CR>}<Esc>Ofmt.Println("skill issue", err)<Esc>')
 
 vim.keymap.set("n", "k", "n")
+
+vim.keymap.set("n", "d(", "di(va(p")
+vim.keymap.set("n", "d[", "di[va[p")
+vim.keymap.set("n", "d{", "di{va{p")
