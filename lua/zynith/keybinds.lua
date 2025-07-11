@@ -47,3 +47,5 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "jd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 vim.keymap.set("n", ".f",
 	'oif err != nil {<CR>}<Esc>Ofmt.Println("skill issue", err)<Esc>')
+
+vim.keymap.set("n", "k", "n")
