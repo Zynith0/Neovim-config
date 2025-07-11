@@ -1,0 +1,167 @@
+return {
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		config = function()
+			require("catppuccin").setup({
+				flavour = "mocha", -- latte, frappe, macchiato, mocha
+				background = { -- :h background
+					light = "latte",
+					dark = "mocha",
+				},
+				transparent_background = false, -- disables setting the background color.
+				show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+				term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+				dim_inactive = {
+					enabled = false, -- dims the background color of inactive window
+					shade = "dark",
+					percentage = 0.15, -- percentage of the shade to apply to the inactive window
+				},
+				no_italic = true, -- Force no italic
+				no_bold = false, -- Force no bold
+				no_underline = false, -- Force no underline
+				styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+					-- comments = { "italic" }, -- Change the style of comments
+					-- conditionals = { "italic" },
+					-- loops = {},
+					-- functions = {},
+					-- keywords = {},
+					-- strings = {},
+					-- variables = {},
+					-- numbers = {},
+					-- booleans = {},
+					-- properties = {},
+					-- types = {},
+					-- operators = {},
+					-- miscs = {}, -- Uncomment to turn off hard-coded styles
+				},
+				color_overrides = {
+					all = {
+					},
+					latte = {
+					},
+					frappe = {},
+					macchiato = {},
+					mocha = {
+						base = "#191724",
+						mantle = "#191724",
+						crust = "#191724",
+						mauve = "#31748f",
+						lavender = "#f6c177",
+						blue = "#31748f",
+						peach = "#eb6f92",
+						pink = "#9ccfd8",
+						red = "#eb6f92",
+						maroon = "#eb6f92",
+					},
+				},
+				custom_highlights = function(colors)
+					return {
+						Boolean = { fg = "#ebbcba" },
+						Character = { fg = "#f6c177" },
+						Comment = { fg = "#908caa" },
+						Conditional = { fg = "#31748f" },
+						Constant = { fg = "#f6c177" },
+						Debug = { fg = "#ebbcba" },
+						Define = { fg = "#c4a7e7" },
+						Delimiter = { fg = "#908caa" },
+						Error = { fg = "#eb6f92" },
+						Exception = { fg = "#31748f" },
+						Float = { fg = "#f6c177" },
+						Function = { fg = "#ebbcba" },
+						Identifier = { fg = "#e0def4" },
+						Include = { fg = "#31748f" },
+						Keyword = { fg = "#31748f" },
+						Label = { fg = "#9ccfd8" },
+						LspCodeLens = { fg = "#908caa" },
+						LspCodeLensSeparator = { fg = "#6e6a86" },
+						LspInlayHint = { fg = "#6e6a86", bg = "#6e6a86", blend = 10 },
+						LspReferenceRead = { bg = "#403d52" },
+						LspReferenceText = { bg = "#403d52" },
+						LspReferenceWrite = { bg = "#403d52" },
+						Macro = { fg = "#c4a7e7" },
+						Number = { fg = "#f6c177" },
+						Operator = { fg = "#908caa" },
+						PreCondit = { fg = "#c4a7e7" },
+						PreProc = { link = "PreCondit" },
+						Repeat = { fg = "#31748f" },
+						Special = { fg = "#9ccfd8" },
+						SpecialChar = { link = "Special" },
+						SpecialComment = { fg = "#c4a7e7" },
+						Statement = { fg = "#31748f" },
+						StorageClass = { fg = "#9ccfd8" },
+						String = { fg = "#f6c177" },
+						Structure = { fg = "#9ccfd8" },
+						Tag = { fg = "#9ccfd8" },
+						Todo = { fg = "#ebbcba", bg = "#ebbcba", blend = 20 },
+						Type = { fg = "#9ccfd8" },
+						TypeDef = { link = "Type" },
+						Underlined = { fg = "#c4a7e7", underline = true },
+
+					}
+				end,
+				default_integrations = true,
+				integrations = {
+					cmp = true,
+					gitsigns = true,
+					nvimtree = true,
+					treesitter = true,
+					notify = false,
+					mini = {
+						enabled = true,
+						indentscope_color = "",
+					},
+					-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+				},
+			})
+		end,
+	}
+}
+
+
+
+
+-- return {
+-- 	{
+-- 		"catppuccin/nvim",
+-- 		name = "catppuccin",
+-- 		priority = 1000,
+-- 		config = function()
+-- 			require("catppuccin").setup {
+-- 				custom_highlights = function(colors)
+-- 					return {
+-- 						Comment = { fg = colors.lavender  },
+-- 						TabLineSel = { bg = colors.pink },
+-- 						CmpBorder = { fg = colors.surface2 },
+-- 						Pmenu = { bg = colors.none },
+-- 						String = { fg = colors.teal },
+-- 						Number = { fg = colors.peach },
+-- 						Operator = { fg = colors.red },
+-- 						Method = { fg = colors.sapphire },
+-- 						Function = { fg = colors.sapphire },
+-- 						Keyword = { fg = colors.green },
+-- 						Information = { fg = colors.pink },
+-- 					}
+-- 				end,
+--
+-- 				config2 = function()
+-- 						color_overrides = {
+-- 							all = {
+-- 								text = "#ffffff",
+-- 							},
+-- 							latte = {
+-- 							},
+-- 							frappe = {},
+-- 							macchiato = {},
+-- 							mocha = {
+-- 								base = "#201d2a",
+-- 								mantle = "#242424",
+-- 								crust = "#474747",
+-- 							},
+-- 						}
+-- 				end,
+-- 			}
+-- 		end,
+-- 	},
+-- }
