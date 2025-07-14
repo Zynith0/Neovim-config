@@ -1,11 +1,3 @@
--- local builtin = require('telescope.builtin')
--- vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
--- vim.keymap.set('n', '<C-f>', builtin.find_files, { desc = 'Telescope find files' })
--- vim.keymap.set("n", "<leader>t", "<cmd>terminal go run %<CR>")
--- vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
--- vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
--- vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-
 local harpoon = require("harpoon")
 
 harpoon:setup()
@@ -37,10 +29,13 @@ vim.keymap.set("n", ",", "i")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+-- quicker deleting when using colemak-dh
 vim.keymap.set("n", "rt", "dd")
 
+-- moving lines
 vim.keymap.set("v", "N", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "E", ":m '<-2<CR>gv=gv")
+
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
@@ -50,6 +45,7 @@ vim.keymap.set("n", ".f",
 
 vim.keymap.set("n", "k", "n")
 
+-- surrounding and deleting brackets
 vim.keymap.set("n", "d(", "f(ldi(va(p")
 vim.keymap.set("n", "d[", "f[ldi[va[p")
 vim.keymap.set("n", "d{", "f{ldi{va{p")
@@ -58,3 +54,7 @@ vim.keymap.set("n", "sw", "i(<Esc>wwi)<Esc>")
 vim.keymap.set("n", "siw", "bi(<Esc>wwi)<Esc>")
 vim.keymap.set("n", "sW", "i(<Esc>WWi)<Esc>")
 vim.keymap.set("n", "siW", "Bi(<Esc>WWi)<Esc>")
+
+-- experimental writing keybinds (no idea if I like these)
+vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
+vim.keymap.set("n", "<leader>wq", "<cmd>wq<CR>")
