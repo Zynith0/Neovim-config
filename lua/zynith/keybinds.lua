@@ -50,6 +50,11 @@ vim.keymap.set("n", ".f",
 
 vim.keymap.set("n", "k", "n")
 
-vim.keymap.set("n", "d(", "di(va(p")
-vim.keymap.set("n", "d[", "di[va[p")
-vim.keymap.set("n", "d{", "di{va{p")
+vim.keymap.set("n", "d(", "f(ldi(va(p")
+vim.keymap.set("n", "d[", "f[ldi[va[p")
+vim.keymap.set("n", "d{", "f{ldi{va{p")
+vim.keymap.set("n", "s$", "i(<Esc>$a)<Esc>")
+vim.keymap.set("n", "sw", "i(<Esc>wwi)<Esc>")
+vim.keymap.set("n", "siw", "bi(<Esc>wwi)<Esc>")
+vim.keymap.set("n", "sW", "i(<Esc>WWi)<Esc>")
+vim.keymap.set("n", "siW", "Bi(<Esc>WWi)<Esc>")
